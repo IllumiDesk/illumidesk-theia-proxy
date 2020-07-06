@@ -7,6 +7,7 @@ for more information.
 import os
 import shutil
 
+
 def setup_theia():
     # Make sure theia is in $PATH
     def _theia_command(port):
