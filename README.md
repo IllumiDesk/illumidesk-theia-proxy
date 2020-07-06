@@ -23,6 +23,24 @@ Install this package:
 pip install -d git+https://github.com/IllumiDesk/illumidesk-theia-proxy@v0.1.0#egg=illumidesk-theia-proxy
 ```
 
+### Set Environment Variables
+
+You will need to set the `NODE_LIB_PATH` envionment variable to point to your node installation library root directory. You will also need to ensure the `PATH` environment variable includes the `../node_modules/.bin` directory to access the `theia` binary.
+
+Here is an example of a set of environment variables declared within a Dockerfile with the `ENV` directive:
+
+```
+ENV NODE_OPTIONS="--max_old_space_size=4096"
+ENV NODE_VERSION=10.21.0
+ENV NVM_VERSION=0.35.3
+ENV NVM_DIR=/usr/local/nvm
+ENV NODE_PATH="${NVM_DIR}/v${NODE_VERSION}/lib/node_modules"
+ENV NODE_LIB_PATH="${NVM_DIR}/v${NODE_VERSION}/lib"
+ENV PATH="${NVM_DIR}/versions/node/v${NODE_VERSION}/bin:${PATH}"
+ENV PATH="${NVM_DIR}/v${NODE_VERSION}/lib/node_modules/.bin:${PATH}"
+ENV THEIA_DEFAULT_PLUGINS=local-dir:plugins
+```
+
 ## Notes
 
 - This package is tested with an image based on one of the [Jupyter docker-stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/) running with JupyterHub.
