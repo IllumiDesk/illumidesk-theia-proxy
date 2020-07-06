@@ -14,7 +14,7 @@ setuptools.setup(
     ],
     entry_points={
         'jupyter_serverproxy_servers': [
-            'illumidesk-theia-proxy = illumidesk_theia_proxy:setup_theia',
+            'theia = illumidesk_theia_proxy:setup_theia',
         ]
     },
     package_data={
