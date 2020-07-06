@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="illumidesk-theia-proxy",
-    version='0.1.0',
+    version='0.1.1',
     url="https://github.com/illumidesk/illumidesk-theia-proxy",
     author="IllumiDesk Team",
     description="hello@illumidesk.com",
