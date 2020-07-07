@@ -6,22 +6,27 @@ for more information.
 """
 import os
 import shutil
+import logging
+
+
+logger = logging.getLogger(__name__)
+logger.setLevel('INFO')
 
 
 def setup_theia():
     # Make sure theia is in $PATH
     def _theia_command(port):
-        executable = 'theia'
-        full_path = shutil.which(executable)
-
-        # Start theia in NODE_LIB_PATH env variable if set
-        # If not, start in 'current directory', which is $REPO_DIR in mybinder
-        # but /home/jovyan (or equivalent) in JupyterHubs
-        working_dir = os.getenv('NODE_LIB_PATH', '.')
-
-        if not full_path:
+        executable = shutil.which('theia')
+        if not executable:
             raise FileNotFoundError('Can not find theia executable in $PATH')
-        return ['theia', 'start', working_dir, '--hostname=0.0.0.0', '--port=' + str(port)]
+        # Create theia working directory
+        working_dir = "${HOME}/theia"
+        if not os.path.exists(working_dir):
+            os.makedirs(working_dir)
+            logger.info("Created directory %s" % working_dir)
+        else:    
+            logger.info("Directory %s already exists" % working_dir)
+        return ['theia', 'start', '--hostname=0.0.0.0', '--port=' + str(port)]
     return {
         'command': _theia_command,
         'environment': {
