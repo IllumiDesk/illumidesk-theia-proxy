@@ -5,6 +5,10 @@ that supports [Visual Studio Code](https://code.visualstudio.com/) compatible ex
 
 ## Installation
 
+```bash
+pip install illumidesk-theia-proxy
+```
+
 ## Requirements
 
 #### Install THEIA IDE
