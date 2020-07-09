@@ -20,7 +20,8 @@ def setup_theia():
         if not executable:
             raise FileNotFoundError('Can not find theia executable in $PATH')
         # Create theia working directory
-        working_dir = "${HOME}/theia"
+        home_dir = os.environ.get('HOME') or '/home/jovyan'
+        working_dir = f'{home_dir}/theia'
         if not os.path.exists(working_dir):
             os.makedirs(working_dir)
             logger.info("Created directory %s" % working_dir)
