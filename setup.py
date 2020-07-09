@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setuptools.setup(
     name="illumidesk-theia-proxy",
-    version='0.1.2',
+    version='0.1.3',
     url="https://github.com/illumidesk/illumidesk-theia-proxy",
     author="IllumiDesk Team",
     description="hello@illumidesk.com",

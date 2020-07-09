@@ -42,6 +42,8 @@ The `THEIA IDE` requires `node v10x` for compilation. Therefore the version of n
 
 IllumiDesk's setup requires `docker volume` mounts with the local host instance. Files copied to the `jovyan` home directory during the docker build stage are overriden by the files located on the host directories when running a container based on the image. Therefore `theia` is installed with a `debian package (*.deb)` with a docker multi-stage build.
 
+This package assumes the `theia` command is globally available and that the user's settings are defined in the `package.json` installed with the *.deb package, which by default is placed in the `/usr/share/theia-example/app/package.json` directory.
+
 ## Attributions
 
 - [`jupyter-theia-proxy`](https://github.com/jupyterhub/jupyter-server-proxy/tree/master/contrib/theia)
