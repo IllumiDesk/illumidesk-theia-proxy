@@ -26,6 +26,6 @@ setuptools.setup(
         ]
     },
     package_data={
-        'illumidesk-theia-proxy': ['icons/theia.svg'],
+        'illumidesk_theia_proxy': ['icons/theia.svg'],
     },
 )
