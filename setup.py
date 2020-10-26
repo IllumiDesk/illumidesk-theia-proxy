@@ -18,7 +18,7 @@ setuptools.setup(
 	keywords=['jupyter', 'theia', 'jupyterhub'],
 	classifiers=['Framework :: Jupyter'],
     install_requires=[
-        'jupyter-server-proxy'
+        'jupyter-server-proxy>=1.5.0'
     ],
     entry_points={
         'jupyter_serverproxy_servers': [
