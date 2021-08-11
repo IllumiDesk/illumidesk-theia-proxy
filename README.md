@@ -3,6 +3,10 @@
 [Theia](https://www.theia-ide.org/) is a configurable web-based IDE
 that supports [Visual Studio Code](https://code.visualstudio.com/) compatible extensions. This package was built using the [`jupyter-server-proxy` cookiecutter template](https://github.com/jupyterhub/jupyter-server-proxy/tree/master/contrib/template).
 
+Try in binder:
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/illumidesk/illumidesk-theia-proxy/main?urlpath=theia)
+
 ## Installation
 
 ```bash
